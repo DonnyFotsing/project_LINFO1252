@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-
+#cette foction est utile car permet de convertir nos données en secondes 
 def extract_seconds(time_str):
     
     if 'm' in time_str and 's' in time_str:
@@ -67,7 +67,7 @@ else:
     plt.figure(figsize=(8, 6))
     #pour la representation des ecartypes et moyennes sur le graphe
     plt.errorbar(x, y, yerr=yerr, fmt='-o', capsize=50)
-    plt.title('Temps d\'exécution en fonction du nombre de threads')
+    plt.title('Temps d\'exécution en fonction du nombre de threads philosophe')
     plt.xlabel('Nombre de threads')
     plt.ylabel('Temps d\'exécution (secondes)')
     #on modifie l'axe des x et y pour afin de pouvoir avoir un schema bien clair
