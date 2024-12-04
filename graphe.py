@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-
+from math import *
 def extract_seconds(time_str):
     
     if 'm' in time_str and 's' in time_str:
