@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo "Nb_threads,Measure_1,Measure_2,Measure_3,Measure_4,Measure_5" > pr.csv
+gcc -o philosopher prcon.c -pthread
+for i in 2 4 8 16 32; do
+  echo -n "Threads: $i"
+  echo -n "$i," >> pr.csv
+  for _ in 1 2 3 4 5; do
+    make -s clean 2>> err.log
+    { time ./philosopher $i > /dev/null; } 2> /tmp/measure
+    cat /tmp/measure | grep real | awk '{print $2}' | tr -d "\n" >> pr.csv
+    echo -n ";" >> pr.csv
+  done
+  echo "" >> pr.csv
+done
+
+# Message de fin
+echo "Mesures collectées et enregistrées dans measures.csv"
