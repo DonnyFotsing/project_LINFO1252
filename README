@@ -1,0 +1,7 @@
+# Bievenue dans notre projet #
+
+Comment run  notre code:
+Une fois dans le dossier où se trouve nos fichiers taper 
+-make : pour generer les fichiers csv et plot les graphes
+-make csv: pour generer les fichiers csv
+-make plots: pour generer les graphes
